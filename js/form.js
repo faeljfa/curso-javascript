@@ -10,9 +10,6 @@ botaoAdicionar.addEventListener("click", (event) => {
     //recebendo os valores do paciente vindos do formulário
     var paciente = obtemPacienteDoFormulario(form);
     
-    //Monta a linha da tabela
-    var pacienteTr = montaTr(paciente)
-
     var erros = validaPaciente(paciente)
     
     if(erros.length > 0){
@@ -20,18 +17,25 @@ botaoAdicionar.addEventListener("click", (event) => {
         return;
     }
 
-    //pegando o id da tabela onde será inseriada a linha com as colunas
-    var tabela = document.querySelector("#tabela-pacientes")
-
+    adicionaPacientesNaTabela(paciente)
+    
     var mensagensErro = document.querySelector("#erros")
     
-
-    //fazendo a inserção
-    tabela.appendChild(pacienteTr)
-
     //limpando o formulário
     //form.reset()
 })
+
+function adicionaPacientesNaTabela(paciente){
+
+    //Monta a linha da tabela
+    var pacienteTr = montaTr(paciente)
+
+    //pegando o id da tabela onde será inseriada a linha com as colunas
+    var tabela = document.querySelector("#tabela-pacientes")
+
+    //fazendo a inserção
+    tabela.appendChild(pacienteTr)
+}
 
 function obtemPacienteDoFormulario(form){
 
