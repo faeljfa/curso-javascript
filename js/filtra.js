@@ -23,15 +23,15 @@ campoFiltro.addEventListener("input", function(){
             var nome = tdNome.textContent
 
             //definindo uma expressão regular para fazer a verificação do que está digitado 
-            //no campo de pesquisa. Nesse caso, o segundo parâmetro informa que é case insensitive
+            //no campo de pesquisa. Nesse caso, o segundo parâmetro (i) informa que é case insensitive
             var expressao = new RegExp(this.value, "i")
 
             //testa se existe o valor digitado no campo de pesquisa, na tabela
             if(!expressao.test(nome)){
-                //caso exista, adiciona a class invisivel no campo (css)
+                //caso não exista, adiciona a class invisivel no campo (css)
                 paciente.classList.add("invisivel")
             } else {
-                //caso não exista, remove a class invisivel do campo (css)
+                //caso exista, remove a class invisivel do campo (css)
                 paciente.classList.remove("invisivel")
             }
         }
