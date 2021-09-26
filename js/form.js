@@ -31,8 +31,6 @@ botaoAdicionar.addEventListener("click", (event) => {
 
     //limpando o formulário
     //form.reset()
-
-
 })
 
 function obtemPacienteDoFormulario(form){
@@ -112,14 +110,12 @@ function validaPaciente(paciente){
 function exibeMensagensErro(erros){
 
     var ul = document.querySelector("#erros")
-    console.log(ul)
     ul.innerHTML = ""
 
     erros.forEach(function(erro){
         
         var li = document.createElement("li")
         li.textContent = erro
-        console.log(li)
         ul.appendChild(li)
         
     })
